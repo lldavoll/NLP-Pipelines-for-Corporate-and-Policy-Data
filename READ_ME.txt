@@ -1,0 +1,30 @@
+Summary
+
+File name: executive_final.csv
+
+Total rows: 11680
+
+Unique executives: 11680
+
+Unique companies: 4656
+
+Confidence levels:
+
+High: 2236
+
+Low: 201
+
+Spacy: 9243
+
+Main columns:
+
+executive_name: Person’s full name
+
+executive_title_clean: Normalized job title (CEO, CFO, VP, etc.)
+
+confidence_level: Extraction confidence label (high, low, spacy)
+
+Notes:
+
+The files: executive_raw, executive_cleaned_low and executive_cleaned_scapy are just checkpoints the data on those files are not depurated but still important to get
+to the final version, I uploaded them in case I need to step back and modify the code.
