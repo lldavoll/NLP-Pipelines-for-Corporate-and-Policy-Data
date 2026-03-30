@@ -1,0 +1,30 @@
+1. File Description:
+
+The file for this Task is called company_contacts_full.csv and contains the final results of the contact-information extraction  made by web scrapping.
+Each row corresponds to one company, with fields for official domain, Investor Relations (IR) information, Customer Service (CS) information, and social media profiles.
+
+The dataset has:
+
+4631 total companies
+
+9 columns
+
+2. Column	Description
+company_clean:	Normalized company name used for search and matching
+domain:	Identified official corporate domain
+ir_page: URL of the company’s Investor Relations page
+ir_email: Extracted Investor Relations email address
+cs_page: Customer service or general contact page
+cs_email: Extracted customer service/support email
+twitter_url: Official Twitter/X account (if found)
+facebook_url: Official Facebook page (if found)
+bluesky_url: Official Bluesky profile (if found)
+
+3. Some considerations:
+
+All company_clean values are present.
+Most missing fields reflect companies that do not publish emails or use webforms only.
+Social media fields are frequently empty because: Not all companies have active accounts.
+Many accounts are not official or not easily discoverable.
+Bluesky is almost entirely empty (normal).
+Overall the accuracy is really high and reliable
