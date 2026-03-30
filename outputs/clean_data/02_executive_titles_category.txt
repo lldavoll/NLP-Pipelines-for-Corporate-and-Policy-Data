@@ -1,0 +1,46 @@
+Dataset Overview
+
+Files: executive_titles_category.csv // executives_final.csv
+Contents: I group all the titles in 12 standardized executive titles grouped by category and their total occurrences across filings.
+
+Column	Description
+title_standard:	Normalized executive title (e.g., Chief Executive Officer, Vice President)
+category: Broader classification of each role (e.g., C-Suite: CEO, Director, VP/EVP/SVP)
+count: Number of times the title appears across all filings
+
+Things I found:
+In the SEC filings documents the five most frequent titles are: CEO, Director, Vice President, CFO, and President.
+The specialized Roles Are Less Frequent, positions like CTO, General Counsel, COO, and Treasurer appear in far fewer filings.
+All other roles that are hard to classify I captured under Other Executive to preserve full record counts (Titles such as: Chairman, Officer, Assistant, etc)
+
+The Visualization:
+For this case I created 3 types of plots:
+
+1. Executive Titles (Bar Chart): This plot shows the total frequency of each standardized executive title.
+Chief Executive Officer and Director are the most common titles across filings.
+Vice President, CFO, and President form the next most frequent tier.
+Specialized roles (e.g., CTO, General Counsel, Treasurer) appear much less often, reflecting variation in company structures.
+
+File: bar_chart.png
+
+
+2. Executive Categories (Pie Chart): The pie chart aggregates titles into broader categories.
+The C-Suite cluster (CEO, CFO, COO, CTO, CMO, Legal) together make up nearly half of all executives.
+Directors and Presidents contribute about one-third.
+Vice Presidents represent a key layer of mid-to-upper management (13%).
+Smaller slices include Corporate Secretary and Finance Officers.
+
+File: category_pie.png
+
+
+3. Title Frequency Distribution (Histogram): This histogram illustrates how often titles occur across filings with a linear scale.
+Most executive titles appear fewer than 500 times a long tail of rare or company-specific positions.
+A few leadership titles (CEO, Director, VP, CFO, President) occur over 1,000 times, forming a clear high-frequency cluster.
+Is clear that the data shows a bimodal distribution: a small set of ubiquitous titles and a large set of rare ones.
+File: histogram_frequencies.png
+
+
+
+References:
+https://www.deel.com/blog/job-level-classification/
+https://www.linkedin.com/pulse/understanding-company-hierarchy-from-kzo0c/
