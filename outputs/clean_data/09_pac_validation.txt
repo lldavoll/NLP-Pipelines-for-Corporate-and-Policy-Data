@@ -1,0 +1,27 @@
+Private PAC Follow-Up
+
+The .rar contains the final structured contains all files correspond to Snowflake PAC contribution records for election cycles 2020–2026.
+
+MAIN FILE: task8_private_pac_matches.csv
+Description: 
+Primary row-level output combining: Snowflake PAC contribution data, Matched FEC committee registry data,  Match classification metadata
+Purpose: This file validates whether committees appearing in the Snowflake PAC dataset correspond to official FEC-registered committees.
+Think it as an authoritative mapping layer between Snowflake PAC activity and the federal registry.
+
+Contains:
+
+From Snowflake: TICKER, ELECTION_CYCLE, COMMITTEE_NAME, COMMITTEE_TYPE_FULL, PARTY_NAME_FULL, RECEIPT_AMOUNT, 
+From FEC Committee Master (when matched): CMTE_ID, CMTE_NM, CONNECTED_ORG_NM, CMTE_TP, ORG_TP
+Matching Fields: match_method, NAME_EXACT, FUZZY_HIGH, FUZZY_REVIEW, NO_MATCH, Patch_score (for fuzzy matches)
+
+
+ADJUNTCS:
+- task8_private_pac_fuzzy_review.csv: This file isolates borderline fuzzy matches that may require confirmation before being treated as fully matched.
+These represent committees with similarity scores between 90–94.
+
+- task8_private_pac_top_unmatched_committees.csv: Top 50 most frequent committees that did not match the FEC registry.
+Highlights systematic unmatched patterns and potential naming inconsistencies. Used to evaluate data quality issues or identify non-federal committee entities.
+
+Overall Results: 95% of Snowflake committees map to official FEC committees.
+A small residual set remains unmatched.
+A clearly defined review bucket isolates borderline fuzzy matches.
