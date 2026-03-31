@@ -1,0 +1,59 @@
+Company PAC Donation Superset
+
+MAIN FILE: company_pac_superset.csv
+
+Purpose
+
+This dataset identifies whether U.S. companies control Political Action Committees (PACs) and whether those PACs have made any political donations, based on Federal Election Commission (FEC) data and Goods Unite Us (GUU) Snowflake models.
+
+It enables a definitive classification of companies into:
+
+Companies with PACs that have donated
+
+Companies with PACs that have not donated
+
+Companies with no PACs (implicit)
+
+Data Sources
+
+FEC PAC master & summary files (official PAC registrations and receipts)
+
+Snowflake: ANALYTICS.MRT_MARKETPLACE.COMPANY_PAC_CONTRIBUTIONS
+
+Snowflake: ANALYTICS.WAREHOUSE.DIM_COMPANY (company universe)
+
+Key Columns
+
+TICKER – Public company ticker
+
+has_pac – Whether the company controls at least one PAC
+
+has_pac_donations – Whether any controlled PAC has donated
+
+pac_count – Number of PACs controlled by the company
+
+active_pac_count – Number of PACs with donation activity
+
+total_pac_amount – Total PAC donations across all cycles
+
+pac_status – One of:
+
+PAC_DONATED
+
+PAC_NO_DONATIONS
+
+NO_PAC
+
+Interpretation
+
+If a company appears in this file:
+
+Its PAC donation status is fully accounted for.
+If a company does not appear as donating:
+
+It has either never donated via a PAC or does not control a PAC.
+
+ADITIONAL FILES:
+fec_pacs_no_donations: Corporate PACs that exist but show zero donation activity.
+fec_pacs_with_donation_flag: Corporate PACs annotated with a has_donated flag based on observed contribution activity.
+company_pac_donation_status: PAC activity rolled up to the connected organization level, including: PAC count, Active PAC count, Total PAC donation amount, PAC donation flags
