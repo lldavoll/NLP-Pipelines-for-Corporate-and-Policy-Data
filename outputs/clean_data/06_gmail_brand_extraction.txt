@@ -1,0 +1,41 @@
+Brand Request Aggregation (Email Requests)
+Overview
+
+This dataset summarizes user-requested brands collected from historical “New Company Request” emails. The original request feature transitioned away from email in January 2025, 
+so this data primarily reflects requests from earlier periods.
+
+Data Source
+
+Input: Gmail inbox containing “New Company Request via iOS / Android” emails
+
+Extraction: Automated Gmail API scraper
+
+Parsing: Brand names extracted from email subject and body text
+
+Post-processing: Separate cleaning notebook to remove commentary, junk strings, and normalize brand names
+
+Output File
+
+brand_request_counts_clean.csv
+
+Columns
+
+brand_canonical_clean
+Final cleaned and normalized brand name (one row per brand)
+
+count
+Total number of times the brand was requested across all emails
+
+first_seen
+Earliest timestamp where this brand appears in the email data
+
+last_seen
+Most recent timestamp where this brand appears in the email data
+
+Cleaning & Normalization Logic (Summary)
+
+Ran full extraction first to avoid losing potential information
+
+Removed junk 
+
+Normalized casing, punctuation, and common encoding issues
