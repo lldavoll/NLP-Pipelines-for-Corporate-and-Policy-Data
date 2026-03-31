@@ -1,0 +1,12 @@
+Overview:
+This dataset contains a cleaned and enriched version of the executive dataset originally extracted from SEC filings (Tasks 1–2), with the addition of standardized company identifiers (tickers).
+
+Columns Description:
+company: Raw company name extracted from SEC filings.
+filing_type: Type of SEC filing where the executive information was found (e.g., 8-K, 10-K).
+executive_name: Full name of the executive as extracted from the filing.
+executive_title: Original, unprocessed executive title from the filing text.
+executive_title_clean: Standardized version of the executive title, mapped into predefined categories (e.g., CEO, CFO, VP, Director).
+company_norm: Normalized version of the company name used for matching. This removes punctuation, standardizes casing, and strips common suffixes (e.g., INC, LLC).
+TICKER: Initial ticker assignment (typically the first match from the candidate list).
+ticker_ambiguous: Boolean flag indicating whether multiple ticker candidates were found for the company.
