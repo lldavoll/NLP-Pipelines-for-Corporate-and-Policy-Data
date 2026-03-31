@@ -1,0 +1,36 @@
+Dataset Schema & Explanation:
+
+The file "companies_subsidiary.csv" contains following fields:
+
+- company_name:	Name of the parent company from your dataset.
+- cik: SEC Central Index Key (unique company identifier).
+- has_exhibit21: True/False (whether the latest 10-K filing contains Exhibit-21).
+- reason: Diagnostic flag explaining missing Exhibit-21 (no 10-K, not filed, etc.).
+- subsidiary_name_raw: Raw text extracted from Exhibit-21 for each subsidiary entry.
+- subsidiary_name_clean: Normalized version for easier matching/analysis.
+- subsidiary_count:	Number of subsidiaries detected in the filing (0 if none or missing).
+- exhibit21_url: Direct SEC link to Exhibit-21 (if available).
+
+Some things that I found in the dataset:
+
+a. Each parent company appears at least once.
+
+b. Parent companies with subsidiaries have multiple rows (one per subsidiary).
+
+c. Parent companies without subsidiaries have 1 row with empty subsidiary fields.
+
+The good thing about the dataset?
+
+I left no companie outside the dataset.
+
+Subsidiaries are easy to aggregate.
+
+"Easy" analyst queries (e.g., “show all parents without subsidiaries”) are simple
+
+Some limitations of the data...
+
+It seems that Exhibit-21 is not required for every filer
+
+Complex filings may contain subsidiaries embedded in PDFs or scanned tables so these cannot be parsed automatically.
+
+Hope this helps :)
