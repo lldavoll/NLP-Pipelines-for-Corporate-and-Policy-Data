@@ -1,0 +1,32 @@
+FILE: official_board_exec_changes.csv
+
+Description: The dataset contains executive changes extracted from Official Board alert emails. The emails report updates to company leadership such as appointments, 
+role changes, and departures.
+
+FIELDS:
+email_date: The date when the alert email was sent.
+
+company: The name of the company where the executive change occurred.
+
+industry: The industry classification of the company.
+
+subsidiary_of: The parent company if the organization is listed as a subsidiary in the alert. 
+If the company is not listed as a subsidiary, this field may be empty.
+
+section_type: The category under which the event appears in the Official Board alert.
+(Appointments,changes)
+
+event_type: The specific type of executive movement described in the alert.
+(joined, became, promoted, left, etc).
+
+executive_name: The name of the executive.
+
+old_position: The executive’s previous role.
+
+new_position: The new or current role of the executive.
+
+effective_date: The date when the executive change takes effect (if specified in the alert).
+
+posted_date: The date when the executive change was posted.
+
+raw_event_text: The original sentence describing the executive change as extracted from the email.
